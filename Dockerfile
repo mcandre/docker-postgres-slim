@@ -1,7 +1,8 @@
 FROM alpine
 MAINTAINER Andrew Pennebaker <andrew.pennebaker@gmail.com>
 ADD postgresql.conf /etc/conf.d/postgresql
-RUN apk add --update postgresql && \
+RUN apk update && \
+    apk add postgresql && \
     mkdir -p /var/lib/postgresql/9.3/data/ && \
 		chmod -R 0700 /var/lib/postgresql/9.3/data/ && \
 		chown -R postgres:postgres /var/lib/postgresql/9.3/data/ && \
