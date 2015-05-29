@@ -21,8 +21,8 @@ docker exec 820fe27a5d6208483aaeb2417227dad263c68041abd3e3cbadb0a3efdd977f1d psq
  Hello World!
 (1 row)
 
-docker images | grep mcandre/docker-postgres-slim | awk '{ print $(NF-1), $NF }'
-56.98 MB
+docker images | grep mcandre/docker-postgres-slim:latest | awk '{ print $(NF-1), $NF }'
+7.79 MB
 ```
 
 # REQUIREMENTS
