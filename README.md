@@ -13,15 +13,16 @@ docker-postgres-slim is a container for running a PostgreSQL server, made smalle
 # EXAMPLE
 
 ```
-$ make
-docker exec 990240288e8b42fe31797b2b56862173a8d67414216a4cb7f50cb981d7bdc3c4 psql -h $(boot2docker ip) -U postgres -c "SELECT 'Hello World!';"
+docker exec 820fe27a5d6208483aaeb2417227dad263c68041abd3e3cbadb0a3efdd977f1d psql --version
+psql (PostgreSQL) 9.3.7
+docker exec 820fe27a5d6208483aaeb2417227dad263c68041abd3e3cbadb0a3efdd977f1d psql -h $(boot2docker ip) -U postgres -c "SELECT 'Hello World!';"
    ?column?
 --------------
  Hello World!
 (1 row)
 
-docker images | grep mcandre/docker-postgres-slim | awk '{ print $(NF-1), $NF }'
-57 MB
+docker images | grep mcandre/docker-postgres-slim:9.3 | awk '{ print $(NF-1), $NF }'
+56.98 MB
 ```
 
 # REQUIREMENTS
