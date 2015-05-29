@@ -17,6 +17,7 @@ build: Dockerfile
 
 run: clean-containers build
 	$(eval CONTAINER=$(shell docker run -d -p 5432:5432 $(IMAGE)))
+	docker exec $(CONTAINER) psql --version
 	docker exec $(CONTAINER) psql -h $(LOCALHOST) -U postgres -c "SELECT 'Hello World!';"
 	docker images | grep $(IMAGE) | awk '{ print $$(NF-1), $$NF }'
 

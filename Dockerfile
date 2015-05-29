@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.1
 MAINTAINER Andrew Pennebaker <andrew.pennebaker@gmail.com>
 ADD postgresql.conf /etc/conf.d/postgresql
 RUN apk update && \
