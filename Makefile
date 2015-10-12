@@ -1,6 +1,6 @@
 IMAGE=mcandre/docker-postgres-slim:latest
 
-export LOCALHOST=$$(boot2docker ip)
+export LOCALHOST=$$(docker-machine ip default)
 
 ifneq ($(OS),Windows_NT)
 	UNAME=$(shell uname -s)

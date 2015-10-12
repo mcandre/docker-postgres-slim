@@ -15,7 +15,7 @@ docker-postgres-slim is a container for running a PostgreSQL server, made smalle
 ```
 docker exec 820fe27a5d6208483aaeb2417227dad263c68041abd3e3cbadb0a3efdd977f1d psql --version
 psql (PostgreSQL) 9.3.7
-docker exec 820fe27a5d6208483aaeb2417227dad263c68041abd3e3cbadb0a3efdd977f1d psql -h $(boot2docker ip) -U postgres -c "SELECT 'Hello World!';"
+docker exec 820fe27a5d6208483aaeb2417227dad263c68041abd3e3cbadb0a3efdd977f1d psql -h $(docker-machine ip default) -U postgres -c "SELECT 'Hello World!';"
    ?column?
 --------------
  Hello World!
@@ -48,8 +48,7 @@ $ sudo yum install docker-io
 ## non-Linux
 
 * [VirtualBox](https://www.virtualbox.org/)
-* [Vagrant](https://www.vagrantup.com/)
-* [boot2docker](http://boot2docker.io/)
+* [Docker Toolbox](https://www.docker.com/toolbox)
 
 ### Mac OS X
 
@@ -58,8 +57,7 @@ $ sudo yum install docker-io
 * [brew-cask](http://caskroom.io/)
 
 ```
-$ brew cask install virtualbox vagrant
-$ brew install boot2docker
+$ brew cask install dockertoolbox
 ```
 
 ### Windows
@@ -67,5 +65,7 @@ $ brew install boot2docker
 * [Chocolatey](https://chocolatey.org/)
 
 ```
-> chocolatey install docker make
+> chocolatey install virtualbox make
 ```
+
+* [DockerToolbox-1.8.2c.exe](https://github.com/docker/toolbox/releases/download/v1.8.2c/DockerToolbox-1.8.2c.exe)
