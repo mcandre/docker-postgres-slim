@@ -32,6 +32,7 @@ docker images | grep mcandre/docker-postgres-slim:latest | awk '{ print $(NF-1),
 ## Optional
 
 * [make](http://www.gnu.org/software/make/)
+* [Node.js](https://nodejs.org/en/) (for dockerlint)
 
 ## Debian/Ubuntu
 

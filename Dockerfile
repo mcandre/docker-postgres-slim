@@ -1,6 +1,7 @@
 FROM alpine:3.1
 MAINTAINER Andrew Pennebaker <andrew.pennebaker@gmail.com>
-ADD postgresql.conf /etc/conf.d/postgresql
+COPY postgresql.conf /etc/conf.d/postgresql
+COPY postgres.sh /postgres.sh
 RUN apk update && \
     apk add postgresql && \
     mkdir -p /var/lib/postgresql/9.4/data/ && \
@@ -9,4 +10,4 @@ RUN apk update && \
     su postgres -c '/usr/bin/initdb /var/lib/postgresql/9.4/data/' && \
     echo "host all all 0.0.0.0/0 trust" >> /var/lib/postgresql/9.4/data/pg_hba.conf
 EXPOSE 5432
-ENTRYPOINT su postgres -c '/usr/bin/postgres -D /var/lib/postgresql/9.4/data -c config_file=/etc/conf.d/postgresql'
+ENTRYPOINT ["/postgres.sh"]
