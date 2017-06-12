@@ -1,2 +1,4 @@
 #!/bin/sh
+set -euo pipefail
+
 su postgres -c '/usr/bin/postgres -D /var/lib/postgresql/9.4/data -c config_file=/etc/conf.d/postgresql'
